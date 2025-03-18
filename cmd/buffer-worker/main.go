@@ -40,10 +40,10 @@ func main() {
 		}
 	}
 
-	err := factBuffer.Close()
+	err := factBuffer.Close() // это закроет канал и цикл завершится
 	if err != nil {
 		log.Printf("Ошибка закрытия буфера: %v", err)
 		return
 	}
-	wg.Wait()
+	wg.Wait() // ждём завершения worker’ов
 }
